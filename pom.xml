@@ -21,7 +21,7 @@
         <java.version>1.8</java.version>
 
         <java.maven.version>3.8.3</java.maven.version>
-        <java.spring.version>5.3.12</java.spring.version>
+        <java.spring.version>5.3.13</java.spring.version>
         <java.hibernate-core.version>5.6.1.Final</java.hibernate-core.version>
         <java.mysql.version>8.0.27</java.mysql.version>
         <java.thymeleaf>3.0.12.RELEASE</java.thymeleaf>
@@ -29,6 +29,8 @@
 <!--        <java.slf4j.version>1.7.32</java.slf4j.version>-->
         <java.logback-classic>1.2.7</java.logback-classic>
         <java.spring-data-jpa>2.6.0</java.spring-data-jpa>
+
+        <javax.servlet>4.0.1</javax.servlet>
 
 <!--        <java.poi.version>5.1.0</java.poi.version>-->
 <!--        <java.aspectj.version>1.9.7</java.aspectj.version>-->
@@ -54,6 +56,20 @@
         <version>${java.spring.version}</version>
     </dependency>
 
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-web -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-web</artifactId>
+        <version>${java.spring.version}</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-webmvc</artifactId>
+        <version>${java.spring.version}</version>
+    </dependency>
+
     <!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa -->
     <dependency>
         <groupId>org.springframework.data</groupId>
@@ -61,7 +77,27 @@
         <version>${java.spring-data-jpa}</version>
     </dependency>
 
-<!--    &lt;!&ndash; https://mvnrepository.com/artifact/org.springframework/spring-webmvc &ndash;&gt;-->
+    <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+    <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>javax.servlet-api</artifactId>
+        <version>${javax.servlet}</version>
+        <scope>provided</scope>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/jstl/jstl -->
+    <dependency>
+        <groupId>jstl</groupId>
+        <artifactId>jstl</artifactId>
+        <version>1.2</version>
+    </dependency>
+
+
+
+
+
+
+    <!--    &lt;!&ndash; https://mvnrepository.com/artifact/org.springframework/spring-webmvc &ndash;&gt;-->
 <!--    <dependency>-->
 <!--        <groupId>org.springframework</groupId>-->
 <!--        <artifactId>spring-webmvc</artifactId>-->
@@ -108,7 +144,13 @@
         <scope>test</scope>
     </dependency>
 
-<!--    &lt;!&ndash; SLF4J &ndash;&gt;-->
+<!--    <dependency>-->
+<!--        <groupId>org.apache.tomcat.embed</groupId>-->
+<!--        <artifactId>tomcat-embed-core</artifactId>-->
+<!--        <version>9.0.48</version>-->
+<!--    </dependency>-->
+
+    <!--    &lt;!&ndash; SLF4J &ndash;&gt;-->
 <!--    &lt;!&ndash; https://mvnrepository.com/artifact/org.slf4j/slf4j-api &ndash;&gt;-->
 <!--    <dependency>-->
 <!--        <groupId>org.slf4j</groupId>-->
@@ -212,14 +254,19 @@
 <!--    </dependency>-->
 
 
-
-
-
-
-
 </dependencies>
 
     <build>
+        <finalName>SpringMVC</finalName>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>maven.compiler.source</source>
+                    <target>maven.compiler.target</target>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 
 </project>
