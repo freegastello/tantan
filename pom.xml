@@ -92,7 +92,12 @@
         <version>1.2</version>
     </dependency>
 
-
+<!--    &lt;!&ndash; https://mvnrepository.com/artifact/org.springframework/spring-orm &ndash;&gt;-->
+<!--    <dependency>-->
+<!--        <groupId>org.springframework</groupId>-->
+<!--        <artifactId>spring-orm</artifactId>-->
+<!--        <version>${java.spring.version}</version>-->
+<!--    </dependency>-->
 
 
 
