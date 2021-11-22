@@ -14,27 +14,20 @@
     <description>My realisation</description>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
         <java.version>1.8</java.version>
-
-        <java.maven.version>3.8.3</java.maven.version>
-        <java.spring.version>5.3.12</java.spring.version>
+        <java.spring.version>5.3.13</java.spring.version>
         <java.hibernate-core.version>5.6.1.Final</java.hibernate-core.version>
         <java.mysql.version>8.0.27</java.mysql.version>
         <java.thymeleaf>3.0.12.RELEASE</java.thymeleaf>
         <java.junit.version>4.13.2</java.junit.version>
-<!--        <java.slf4j.version>1.7.32</java.slf4j.version>-->
-        <java.logback-classic>1.2.7</java.logback-classic>
         <java.spring-data-jpa>2.6.0</java.spring-data-jpa>
 
+<!--        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>-->
+<!--        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>-->
+<!--        <java.logback-classic>1.2.7</java.logback-classic>-->
+<!--        <java.slf4j.version>1.7.32</java.slf4j.version>-->
 <!--        <java.poi.version>5.1.0</java.poi.version>-->
 <!--        <java.aspectj.version>1.9.7</java.aspectj.version>-->
-
-
-        <maven.compiler.release>8</maven.compiler.release>
     </properties>
 
 <dependencies>
@@ -217,7 +210,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.0.2</version>
+                <version>3.8.1</version>
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
