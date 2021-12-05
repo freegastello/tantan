@@ -11,19 +11,19 @@ import static com.spring.utils.MagicNumber.num_3;
 
 @Component
 public class InitData {
-    @Autowired
-    AnimalsRepository repo;
-
-    public void initData() {
-        generateEntityAnimals();
-    }
-
-    private void generateEntityAnimals(){
-        List<Animals> animalsList = null;
-        for (int i = 0; i < num_3; i++) {
-            animalsList.add(new Animals("anim_" + i, 20 + i));
-        }
-        repo.saveAll(animalsList);
-    }
+//    @Autowired
+//    AnimalsRepository repo;
+//
+//    public void initData() {
+//        generateEntityAnimals();
+//    }
+//
+//    private void generateEntityAnimals(){
+//        List<Animals> animalsList = null;
+//        for (int i = 0; i < num_3; i++) {
+//            animalsList.add(new Animals("anim_" + i, 20 + i));
+//        }
+//        repo.saveAll(animalsList);
+//    }
 
 }

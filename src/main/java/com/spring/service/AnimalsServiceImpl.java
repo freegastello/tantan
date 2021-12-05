@@ -9,11 +9,12 @@ import java.util.List;
 
 @Service
 public class AnimalsServiceImpl implements AnimalsService{
-    @Autowired
-    AnimalsRepository repo;
+//    @Autowired
+//    AnimalsRepository repo;
 
-    @Override
-    public List<Animals> myLoad() {
-        return repo.findAll();
-    }
+//    @Override
+//    public List<Animals> myLoad() {
+//        return null;
+////        return repo.findAll();
+//    }
 }

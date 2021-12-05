@@ -7,5 +7,5 @@ import java.util.List;
 
 @Service
 public interface AnimalsService {
-    List<Animals> myLoad();
+//    List<Animals> myLoad();
 }

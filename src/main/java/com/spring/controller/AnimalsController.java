@@ -2,7 +2,7 @@ package com.spring.controller;
 
 import org.springframework.stereotype.Controller;
 
-@Controller
+//@Controller
 public class AnimalsController {
 
 
