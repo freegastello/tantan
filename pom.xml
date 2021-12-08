@@ -18,9 +18,9 @@
         <java.spring.version>5.3.13</java.spring.version>
         <java.hibernate-core.version>5.6.1.Final</java.hibernate-core.version>
         <java.mysql.version>8.0.27</java.mysql.version>
-<!--        <java.thymeleaf>3.0.12.RELEASE</java.thymeleaf>-->
+        <java.thymeleaf>3.0.12.RELEASE</java.thymeleaf>
         <java.junit.version>4.13.2</java.junit.version>
-<!--        <java.spring-data-jpa>2.6.0</java.spring-data-jpa>-->
+        <java.spring-data-jpa>2.6.0</java.spring-data-jpa>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -111,11 +111,11 @@
 
     <!-- THYMELEAF -->
     <!-- https://mvnrepository.com/artifact/org.thymeleaf/thymeleaf -->
-<!--    <dependency>-->
-<!--        <groupId>org.thymeleaf</groupId>-->
-<!--        <artifactId>thymeleaf</artifactId>-->
-<!--        <version>${java.thymeleaf}</version>-->
-<!--    </dependency>-->
+    <dependency>
+        <groupId>org.thymeleaf</groupId>
+        <artifactId>thymeleaf</artifactId>
+        <version>${java.thymeleaf}</version>
+    </dependency>
 
     <!-- JUNIT -->
     <!-- https://mvnrepository.com/artifact/junit/junit -->
@@ -125,13 +125,14 @@
         <version>${java.junit.version}</version>
         <scope>test</scope>
     </dependency>
+    <dependency>
+        <groupId>org.thymeleaf</groupId>
+        <artifactId>thymeleaf-spring5</artifactId>
+        <version>3.0.12.RELEASE</version>
+    </dependency>
 
 
-
-
-
-
-<!--    &lt;!&ndash; SLF4J &ndash;&gt;-->
+    <!--    &lt;!&ndash; SLF4J &ndash;&gt;-->
 <!--    &lt;!&ndash; https://mvnrepository.com/artifact/org.slf4j/slf4j-api &ndash;&gt;-->
 <!--    <dependency>-->
 <!--        <groupId>org.slf4j</groupId>-->
