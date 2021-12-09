@@ -52,6 +52,7 @@
         <version>${java.spring.version}</version>
     </dependency>
 
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
     <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-webmvc</artifactId>
@@ -79,19 +80,12 @@
         <version>1.2</version>
     </dependency>
 
-<!--    &lt;!&ndash; https://mvnrepository.com/artifact/org.springframework/spring-webmvc &ndash;&gt;-->
-<!--    <dependency>-->
-<!--        <groupId>org.springframework</groupId>-->
-<!--        <artifactId>spring-webmvc</artifactId>-->
-<!--        <version>${java.spring.version}</version>-->
-<!--    </dependency>-->
-
-<!--    &lt;!&ndash; https://mvnrepository.com/artifact/org.springframework/spring-orm &ndash;&gt;-->
-<!--    <dependency>-->
-<!--        <groupId>org.springframework</groupId>-->
-<!--        <artifactId>spring-orm</artifactId>-->
-<!--        <version>${java.spring.version}</version>-->
-<!--    </dependency>-->
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-orm -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-orm</artifactId>
+        <version>${java.spring.version}</version>
+    </dependency>
 
     <!-- HIBERNATE -->
     <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->

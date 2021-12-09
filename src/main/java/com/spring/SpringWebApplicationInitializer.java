@@ -36,13 +36,13 @@ public class SpringWebApplicationInitializer extends AbstractAnnotationConfigDis
     }
 
     @Override
-    protected Class<?>[] getServletConfigClasses() {
-        return new Class<?>[] { SpringWebConfig.class };
+    protected Class<?>[] getRootConfigClasses() {
+        return new Class<?>[] { SpringBusinessConfig.class };
     }
 
     @Override
-    protected Class<?>[] getRootConfigClasses() {
-        return new Class<?>[] { SpringBusinessConfig.class };
+    protected Class<?>[] getServletConfigClasses() {
+        return new Class<?>[] { SpringWebConfig.class };
     }
 
     @Override
