@@ -25,6 +25,13 @@ public class InitData {
 //            customer.setEmail("all@gmail.com");
 //            repo.saveCustomer(customer);
 //        }
+
+//        Customer customer = new Customer();
+//        customer.setFirstName("111");
+//        customer.setLastName("222");
+//        repo.saveCustomer(customer);
+
+
     }
 
 
