@@ -4,9 +4,9 @@ import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
 
-@Entity
-@Where(clause = "DELETED = 0")
-@Table(name = "animals")
+//@Entity
+//@Where(clause = "DELETED = 0")
+//@Table(name = "animals")
 public class Animals {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

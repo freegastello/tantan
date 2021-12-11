@@ -21,12 +21,12 @@
         <java.thymeleaf>3.0.12.RELEASE</java.thymeleaf>
         <java.junit.version>4.13.2</java.junit.version>
         <java.spring-data-jpa>2.6.0</java.spring-data-jpa>
+        <java.slf4j.version>1.7.32</java.slf4j.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 <!--        <java.logback-classic>1.2.7</java.logback-classic>-->
-<!--        <java.slf4j.version>1.7.32</java.slf4j.version>-->
 <!--        <java.poi.version>5.1.0</java.poi.version>-->
 <!--        <java.aspectj.version>1.9.7</java.aspectj.version>-->
     </properties>
@@ -34,28 +34,56 @@
 <dependencies>
     <!-- SPRINGFRAMEWORK -->
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
-<!--    <dependency>-->
-<!--        <groupId>org.springframework</groupId>-->
-<!--        <artifactId>spring-context</artifactId>-->
-<!--        <version>${java.spring.version}</version>-->
-<!--    </dependency>-->
-
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>${java.spring.version}</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-expression -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-expression</artifactId>
+        <version>${java.spring.version}</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-beans -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-beans</artifactId>
+        <version>${java.spring.version}</version>
+    </dependency>
     <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-core</artifactId>
         <version>${java.spring.version}</version>
     </dependency>
-
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-orm -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-orm</artifactId>
+        <version>${java.spring.version}</version>
+    </dependency>
     <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-web</artifactId>
         <version>${java.spring.version}</version>
     </dependency>
-
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
     <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-webmvc</artifactId>
         <version>${java.spring.version}</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-aop -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-aop</artifactId>
+        <version>${java.spring.version}</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-jcl -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-jcl</artifactId>
+        <version>5.3.13</version>
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa -->
@@ -78,20 +106,6 @@
         <artifactId>jstl</artifactId>
         <version>1.2</version>
     </dependency>
-
-<!--    &lt;!&ndash; https://mvnrepository.com/artifact/org.springframework/spring-webmvc &ndash;&gt;-->
-<!--    <dependency>-->
-<!--        <groupId>org.springframework</groupId>-->
-<!--        <artifactId>spring-webmvc</artifactId>-->
-<!--        <version>${java.spring.version}</version>-->
-<!--    </dependency>-->
-
-<!--    &lt;!&ndash; https://mvnrepository.com/artifact/org.springframework/spring-orm &ndash;&gt;-->
-<!--    <dependency>-->
-<!--        <groupId>org.springframework</groupId>-->
-<!--        <artifactId>spring-orm</artifactId>-->
-<!--        <version>${java.spring.version}</version>-->
-<!--    </dependency>-->
 
     <!-- HIBERNATE -->
     <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
@@ -131,14 +145,14 @@
         <version>3.0.12.RELEASE</version>
     </dependency>
 
+    <!-- SLF4J -->
+    <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+    <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>${java.slf4j.version}</version>
+    </dependency>
 
-    <!--    &lt;!&ndash; SLF4J &ndash;&gt;-->
-<!--    &lt;!&ndash; https://mvnrepository.com/artifact/org.slf4j/slf4j-api &ndash;&gt;-->
-<!--    <dependency>-->
-<!--        <groupId>org.slf4j</groupId>-->
-<!--        <artifactId>slf4j-api</artifactId>-->
-<!--        <version>${java.slf4j.version}</version>-->
-<!--    </dependency>-->
 <!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 &ndash;&gt;-->
 <!--        <dependency>-->
 <!--            <groupId>org.slf4j</groupId>-->
