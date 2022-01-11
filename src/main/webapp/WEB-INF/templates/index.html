@@ -4,11 +4,15 @@
 <body>
 <div>Тест проверка _5555</div>
 
-<!--<div class="container">-->
-<!--    <p>Проба</p>-->
-<!--    <p>Щёлкните по документу для запуска обработчика.</p>-->
-<!--    <button type="submit" id="btn">Жми меня, чем хочешь!</button>-->
-<!--</div>-->
+<div th:if="${customers}">
+    <p th:text="${customers}"></p>
+</div>
+
+<div class="container">
+    <p>Проба</p>
+    <p>Щёлкните по документу для запуска обработчика.</p>
+    <button type="submit" id="btn">Жми меня, чем хочешь!</button>
+</div>
 
 </body>
 </html>

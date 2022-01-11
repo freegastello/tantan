@@ -28,7 +28,6 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 import com.spring.config.SpringWebConfig;
 
 public class SpringWebApplicationInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
-
     public static final String CHARACTER_ENCODING = "UTF-8";
 
     public SpringWebApplicationInitializer() {

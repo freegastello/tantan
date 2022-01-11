@@ -45,7 +45,6 @@ import java.util.Properties;
 import javax.sql.DataSource;
 
 @Configuration
-@EnableWebMvc
 @EnableTransactionManagement
 @ComponentScan("com.spring")
 public class SpringWebConfig
@@ -63,9 +62,7 @@ public class SpringWebConfig
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
-        sessionFactory.setPackagesToScan(new String[] {
-                "com.spring"
-        });
+        sessionFactory.setPackagesToScan(new String[] {"com.spring"});
         sessionFactory.setHibernateProperties(hibernateProperties());
         return sessionFactory;
     }

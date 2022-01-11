@@ -21,10 +21,15 @@ public class CustomerController {
     private CustomerService customerService;
 
     @GetMapping("/list")
-    public String listCustomers(Model theModel) {
+    public String listCustomers(Model model) {
         List<Customer> theCustomers = customerService.getCustomers();
-        theModel.addAttribute("customers", theCustomers);
-        return "list-customers";
+        model.addAttribute("customers", theCustomers);
+        Customer customer = new Customer();
+        customer.setFirstName("firstSave");
+        customer.setLastName("lastSave");
+        customerService.saveCustomer(customer);
+        model.addAttribute("customers", customerService.getCustomers());
+        return "index";
     }
 
     @GetMapping("/showForm")

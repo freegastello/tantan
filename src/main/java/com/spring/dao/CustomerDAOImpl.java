@@ -15,7 +15,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class CustomerDAOImpl implements CustomerDAO {
-
     @Autowired
     private SessionFactory sessionFactory;
 
@@ -23,8 +22,8 @@ public class CustomerDAOImpl implements CustomerDAO {
     public List <Customer> getCustomers() {
         Session session = sessionFactory.getCurrentSession();
         CriteriaBuilder cb = session.getCriteriaBuilder();
-        CriteriaQuery < Customer > cq = cb.createQuery(Customer.class);
-        Root < Customer > root = cq.from(Customer.class);
+        CriteriaQuery <Customer> cq = cb.createQuery(Customer.class);
+        Root <Customer> root = cq.from(Customer.class);
         cq.select(root);
         Query query = session.createQuery(cq);
         return query.getResultList();
@@ -39,14 +38,14 @@ public class CustomerDAOImpl implements CustomerDAO {
 
     @Override
     public void saveCustomer(Customer theCustomer) {
-        Session currentSession = sessionFactory.getCurrentSession();
-        currentSession.saveOrUpdate(theCustomer);
+        Session session = sessionFactory.getCurrentSession();
+        session.saveOrUpdate(theCustomer);
     }
 
     @Override
     public Customer getCustomer(int theId) {
-        Session currentSession = sessionFactory.getCurrentSession();
-        Customer theCustomer = currentSession.get(Customer.class, theId);
+        Session session = sessionFactory.getCurrentSession();
+        Customer theCustomer = session.get(Customer.class, theId);
         return theCustomer;
     }
 }
