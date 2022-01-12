@@ -19,11 +19,11 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes = SpringWebConfig.class)
-public class internetYTest {
+public class SessionTest {
+    private Session session;
+
     @Autowired
     private SessionFactory sessionFactory;
-
-    private Session session;
 
     @Before
     public void before() {
@@ -31,10 +31,10 @@ public class internetYTest {
     }
 
     @Test
-    public void te2() {
+    public void nativeQuerySelectTest() {
         Query query = session.createNativeQuery("SELECT * FROM tantandb.customer");
         List<Customer> customerList = query.getResultList();
-        assertEquals(10, customerList.size());
+        assertEquals(0, customerList.size());
     }
 
     @After

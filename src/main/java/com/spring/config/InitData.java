@@ -12,7 +12,7 @@ public class InitData {
     private CustomerService customerService;
 
     public void initData() {
-        generateEntityAnimals();
+//        generateEntityAnimals();
     }
 
     private void generateEntityAnimals() {
@@ -24,21 +24,4 @@ public class InitData {
             customerService.saveCustomer(customer);
         }
     }
-
-
-//    @Autowired
-//    AnimalsRepository repo;
-//
-//    public void initData() {
-//        generateEntityAnimals();
-//    }
-//
-//    private void generateEntityAnimals(){
-//        List<Animals> animalsList = null;
-//        for (int i = 0; i < num_3; i++) {
-//            animalsList.add(new Animals("anim_" + i, 20 + i));
-//        }
-//        repo.saveAll(animalsList);
-//    }
-
 }

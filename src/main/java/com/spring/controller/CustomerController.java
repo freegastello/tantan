@@ -14,19 +14,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 
 @Controller
-@RequestMapping("/customer")
+@RequestMapping
 public class CustomerController {
-
     @Autowired
     private CustomerService customerService;
 
-    @GetMapping("/list")
+    @GetMapping("/")
     public String listCustomers(Model model) {
         List<Customer> theCustomers = customerService.getCustomers();
-        model.addAttribute("customers", theCustomers);
         Customer customer = new Customer();
         customer.setFirstName("firstSave");
         customer.setLastName("lastSave");
+        customer.setEmail("email@gmail.com");
         customerService.saveCustomer(customer);
         model.addAttribute("customers", customerService.getCustomers());
         return "index";
