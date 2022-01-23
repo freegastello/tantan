@@ -78,6 +78,8 @@ public class SpringWebConfig {
         properties.put("hibernate.show_sql", environment.getRequiredProperty("hibernate.show_sql"));
         properties.put("hibernate.format_sql", environment.getRequiredProperty("hibernate.format_sql"));
         properties.put("hibernate.hbm2ddl.auto", environment.getRequiredProperty("hibernate.hbm2ddl.auto"));
+        properties.put("hibernate.jdbc.batch_size", environment.getRequiredProperty("hibernate.jdbc.batch_size"));
+
         return properties;
     }
 
@@ -88,10 +90,10 @@ public class SpringWebConfig {
         return transactionManager;
     }
 
-    public void setApplicationContext(final ApplicationContext applicationContext)
-            throws BeansException {
-        this.applicationContext = applicationContext;
-    }
+//    public void setApplicationContext(final ApplicationContext applicationContext)
+//            throws BeansException {
+//        this.applicationContext = applicationContext;
+//    }
 
     /*
      *  Message externalization/internationalization
