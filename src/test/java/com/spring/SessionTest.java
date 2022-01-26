@@ -87,9 +87,16 @@ public class SessionTest {
             customer.setEmail("testEmail_" + i + "@test.com");
             customerList.add(customer);
         }
+// Описание в интернете https://habr.com/ru/post/501756/
+//        Transaction transaction = session.getTransaction();
+//        transaction.begin();
 
         for (int i = 0; i < customerList.size(); i++) {
-            session.save(customerList.get(i));
+            // Всё работает:
+//            session.save(customerList.get(i));
+//            session.persist(customerList.get(i));
+            session.saveOrUpdate(customerList.get(i));
+
             if (i != 0  && i % 100 == 0) {
                 session.flush();
                 session.clear();
@@ -98,15 +105,16 @@ public class SessionTest {
             System.out.println("Проход_" + i + ", Количество прочитанных = " + customerListPrint.size());
         }
         tx.commit();
+
         List<Customer> customerListPrint2 = query.getResultList();
         System.out.println("Проход_Последний, Количество прочитанных = " + customerListPrint2.size());
-        session.close();
+//        session.close();
     }
 
-//    @After
-//    public void after() {
-//        session.close();
-//        sessionFactory.close();
-//    }
+    @After
+    public void after() {
+        session.close();
+        sessionFactory.close();
+    }
 
 }

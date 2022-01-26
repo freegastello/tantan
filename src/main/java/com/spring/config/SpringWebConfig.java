@@ -79,7 +79,9 @@ public class SpringWebConfig {
         properties.put("hibernate.format_sql", environment.getRequiredProperty("hibernate.format_sql"));
         properties.put("hibernate.hbm2ddl.auto", environment.getRequiredProperty("hibernate.hbm2ddl.auto"));
         properties.put("hibernate.jdbc.batch_size", environment.getRequiredProperty("hibernate.jdbc.batch_size"));
-
+        properties.put("hibernate.order_inserts", environment.getRequiredProperty("hibernate.order_inserts"));
+        properties.put("hibernate.order_updates", environment.getRequiredProperty("hibernate.order_updates"));
+        properties.put("hibernate.generate_statistics", environment.getRequiredProperty("hibernate.generate_statistics"));
         return properties;
     }
 
