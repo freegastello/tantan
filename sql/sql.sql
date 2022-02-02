@@ -1,9 +1,9 @@
-INSERT INTO tantandb.animals (name, age, deleted) VALUES ('First', 22, 0);
+INSERT INTO tantandb.customer (name, age, deleted) VALUES ('First', 22, 0);
 
-SELECT * FROM tantandb.animals;
+SELECT * FROM tantandb.customer;
 
-DELETE FROM tantandb.animals WHERE id = 2;
+DELETE FROM tantandb.customer WHERE id = 2;
 
-SELECT * FROM tantandb.animals;
+SELECT * FROM tantandb.customer;
 
-INSERT INTO tantandb.animals (name, age, deleted) VALUES ('Two', 22, 0);
+INSERT INTO tantandb.customer(name, age, deleted) VALUES ('Two', 22, 0);

@@ -8,6 +8,26 @@
     <p th:text="${customers}"></p>
 </div>
 
+<br>
+
+<div th:if="${not #lists.isEmpty(customers)}">
+    <h3>Таблица Customers</h3>
+    <table cellspacing="0" border="1" cellpadding="0" width="1000">
+        <tr>
+            <th>№</th>
+            <th>Имя</th>
+            <th>Фвмилия</th>
+            <th>e-mail</th>
+        </tr>
+        <tr th:each="customer : ${customers}">
+            <td th:text="${customer.getId}" style="text-align: right">#</td>
+            <td th:text="${customer.getFirstName}" style="text-align: center">#</td>
+            <td th:text="${customer.getLastName}" style="text-align: center">#</td>
+            <td th:text="${customer.getEmail}" style="text-align: center">#</td>
+        </tr>
+    </table>
+</div>
+
 <div class="container">
     <p>Проба</p>
     <p>Щёлкните по документу для запуска обработчика.</p>
