@@ -93,9 +93,9 @@ public class SessionTest {
 
         for (int i = 0; i < customerList.size(); i++) {
             // Всё работает:
-//            session.save(customerList.get(i));
+            session.save(customerList.get(i));
 //            session.persist(customerList.get(i));
-            session.saveOrUpdate(customerList.get(i));
+//            session.saveOrUpdate(customerList.get(i));
 
             if (i != 0  && i % 100 == 0) {
                 session.flush();
@@ -109,6 +109,14 @@ public class SessionTest {
         List<Customer> customerListPrint2 = query.getResultList();
         System.out.println("Проход_Последний, Количество прочитанных = " + customerListPrint2.size());
 //        session.close();
+    }
+
+
+    @Test
+    public void h2Test() {
+        Query query = session.createNativeQuery("SELECT * FROM TANTANDB.CUSTOMER");
+        List<Customer> customerListPrint = query.getResultList();
+        System.out.println("h2 = " + customerListPrint.size());
     }
 
     @After

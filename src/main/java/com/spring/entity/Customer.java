@@ -5,11 +5,11 @@ import javax.persistence.*;
 @Entity
 @Table(name = "customer")
 public class Customer {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+//    @GeneratedValue(strategy = GenerationType.AUTO)// Использовать для пакетного сохранения MySQL
+    @GeneratedValue(strategy = GenerationType.IDENTITY)// Использовать для H2
     @Column(name = "id")
-    private int id;
+    private Long id;
 
     @Column(name = "first_name")
     private String firstName;
@@ -24,11 +24,11 @@ public class Customer {
 
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

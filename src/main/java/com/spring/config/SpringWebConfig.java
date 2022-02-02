@@ -20,7 +20,6 @@ package com.spring.config;
  * =============================================================================
  */
 
-import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -82,6 +81,7 @@ public class SpringWebConfig {
         properties.put("hibernate.order_inserts", environment.getRequiredProperty("hibernate.order_inserts"));
         properties.put("hibernate.order_updates", environment.getRequiredProperty("hibernate.order_updates"));
         properties.put("hibernate.generate_statistics", environment.getRequiredProperty("hibernate.generate_statistics"));
+        properties.put("hibernate.default_schema", environment.getRequiredProperty("hibernate.default_schema"));
         return properties;
     }
 
