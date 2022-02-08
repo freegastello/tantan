@@ -21,7 +21,6 @@ public class CustomerController {
 
     @GetMapping("/")
     public String listCustomers(Model model) {
-        List<Customer> theCustomers = customerService.getCustomers();
         Customer customer = new Customer();
         customer.setFirstName("firstSave");
         customer.setLastName("lastSave");
