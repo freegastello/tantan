@@ -90,10 +90,10 @@ public class SpringWebConfig {
         return transactionManager;
     }
 
-//    public void setApplicationContext(final ApplicationContext applicationContext)
-//            throws BeansException {
-//        this.applicationContext = applicationContext;
-//    }
+    public void setApplicationContext(final ApplicationContext applicationContext)
+            throws BeansException {
+        this.applicationContext = applicationContext;
+    }
 
     /*
      *  Message externalization/internationalization

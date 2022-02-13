@@ -1,5 +1,6 @@
 package com.spring.controller;
 
+import com.spring.dto.GsonRequestDTO;
 import com.spring.entity.Customer;
 import com.spring.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,13 +22,16 @@ public class CustomerController {
 
     @GetMapping("/")
     public String listCustomers(Model model) {
-        Customer customer = new Customer();
-        customer.setFirstName("firstSave");
-        customer.setLastName("lastSave");
-        customer.setEmail("email@gmail.com");
-        customerService.saveCustomer(customer);
-        model.addAttribute("customers", customerService.getCustomers());
+        List<Customer> customerList = customerService.getCustomers();
+        model.addAttribute("customers", customerList);
         return "index";
+    }
+
+    @GetMapping("/objtest")
+    public List<Customer> listCustomers(GsonRequestDTO dto) {
+        System.out.println("dto = " + dto);
+        List<Customer> customerList = customerService.getCustomers();
+        return customerList;
     }
 
     @GetMapping("/showForm")
@@ -59,3 +63,11 @@ public class CustomerController {
         return "redirect:/customer/list";
     }
 }
+
+
+//        Customer customer = new Customer();
+//        customer.setFirstName("firstSave");
+//        customer.setLastName("lastSave");
+//        customer.setEmail("email@gmail.com");
+//        customerService.saveCustomer(customer);
+
