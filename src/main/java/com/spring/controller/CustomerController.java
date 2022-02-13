@@ -23,6 +23,13 @@ public class CustomerController {
     @GetMapping("/")
     public String listCustomers(Model model) {
         List<Customer> customerList = customerService.getCustomers();
+
+        Customer customer = new Customer();
+        customer.setFirstName("firstSave");
+        customer.setLastName("lastSave");
+        customer.setEmail("email@gmail.com");
+        customerService.saveCustomer(customer);
+
         model.addAttribute("customers", customerList);
         return "index";
     }
