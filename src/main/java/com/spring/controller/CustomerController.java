@@ -34,12 +34,12 @@ public class CustomerController {
         return "index";
     }
 
-    @GetMapping("/objtest")
-    public List<Customer> listCustomers(GsonRequestDTO dto) {
-        System.out.println("dto = " + dto);
-        List<Customer> customerList = customerService.getCustomers();
-        return customerList;
-    }
+//    @GetMapping("/objtest")
+//    public List<Customer> listCustomers(GsonRequestDTO dto) {
+//        System.out.println("dto = " + dto);
+//        List<Customer> customerList = customerService.getCustomers();
+//        return customerList;
+//    }
 
     @GetMapping("/showForm")
     public String showFormForAdd(Model theModel) {
