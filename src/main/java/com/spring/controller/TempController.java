@@ -49,8 +49,7 @@ public class TempController {
     // 2 POST
     @PostMapping("/objtest")
     public String listCustomers(GsonRequestDTO dto) {
-        log.info("Сработал контроллер");
-        System.out.println("Пришло = " + dto);//dtodtodto = GsonRequestDTO{id_product='abc', qty_product='def'}
+        log.info("Сработал контроллер. Переменная = " + dto);
         return "index";
     }
 
