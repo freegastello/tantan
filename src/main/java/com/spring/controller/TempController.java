@@ -3,6 +3,8 @@ package com.spring.controller;
 import com.spring.dto.GsonRequestDTO;
 import com.spring.entity.Customer;
 import com.spring.service.CustomerService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,6 +16,8 @@ import java.util.List;
 //@RequestMapping
 @RestController
 public class TempController {
+    private static final Logger log = LoggerFactory.getLogger(TempController.class);
+
     @Autowired
     private CustomerService customerService;
 
@@ -45,7 +49,8 @@ public class TempController {
     // 2 POST
     @PostMapping("/objtest")
     public String listCustomers(GsonRequestDTO dto) {
-        System.out.println("dtodtodto = " + dto);//dtodtodto = GsonRequestDTO{id_product='abc', qty_product='def'}
+        log.info("Сработал контроллер");
+        System.out.println("Пришло = " + dto);//dtodtodto = GsonRequestDTO{id_product='abc', qty_product='def'}
         return "index";
     }
 

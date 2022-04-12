@@ -56,40 +56,41 @@ public class CustomerDAOTest {
         List<Customer> customerList = customerDAO.getCustomers();
         assertEquals(0, customerList.size());
 
-        Customer customer = new Customer();
-        customer.setFirstName("First_1");
-        customer.setLastName("Last_1");
-        customer.setEmail("all_1@gmail.com");
-        customerDAO.saveCustomer(customer);
+        createCustomer(2);
 
-        Customer customer2 = new Customer();
-        customer2.setFirstName("First_2");
-        customer2.setLastName("Last_2");
-        customer2.setEmail("all_2@gmail.com");
-        customerDAO.saveCustomer(customer2);
-
-//  Работающие варианты:
-//        String hql = "FROM Customer";
+//  Работающий вариант 1:
+        int correctResult = 2;
+        String hql = "FROM Customer";
 //        String hql = "SELECT c FROM Customer c";
 
+//  Работающий вариант 2:
+//        int correctResult = 1;
 //        String hql = "SELECT c FROM Customer c WHERE c.firstName = '" + customer2.getFirstName() + "'";
 //        String hql = "FROM Customer c WHERE c.firstName = '" + customer2.getFirstName() + "'";
-        String hql = "FROM Customer c WHERE c.firstName = '" + customer2.getFirstName() + "' AND c.lastName = '" + customer2.getLastName() + "'";
+//        String hql = "FROM Customer c WHERE c.firstName = '" + customer2.getFirstName() + "' AND c.lastName = '" + customer2.getLastName() + "'";
+//        String hql = "FROM Customer c WHERE c.firstName = '" + customer2.getFirstName() + "' AND c.lastName = '" + customer2.getLastName() + "' AND c.id >= '" + customer2.getId() + "'";
         Query query = session.createQuery(hql);
         List<Customer> resultList = query.getResultList();
 
-//        assertEquals(2, resultList.size());
-        assertEquals(1, resultList.size());
+        assertEquals(correctResult, resultList.size());
 
-        for (Customer c : resultList) {
-            System.out.println(c);
-        }
+        resultList.stream().forEach(el -> System.out.println(el));
     }
 
     @After
     public void after() {
 //        session.close();
 //        sessionFactory.close();
+    }
+
+    private void createCustomer(int num) {
+        for (int i = 1; i <= num; i++) {
+            Customer customer = new Customer();
+            customer.setFirstName("First_" + i);
+            customer.setLastName("Last_" + i);
+            customer.setEmail("all_" + i + "@gmail.com");
+            customerDAO.saveCustomer(customer);
+        }
     }
 
 }

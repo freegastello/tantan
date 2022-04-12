@@ -21,7 +21,8 @@
         <java.thymeleaf>3.0.12.RELEASE</java.thymeleaf>
         <java.junit.version>4.13.2</java.junit.version>
         <java.spring-data-jpa>2.6.0</java.spring-data-jpa>
-        <java.slf4j.version>1.7.32</java.slf4j.version>
+<!--        <java.slf4j.version>1.7.32</java.slf4j.version>-->
+        <java.log4j-slf4j-impl.version>2.17.2</java.log4j-slf4j-impl.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -145,21 +146,21 @@
         <version>3.0.12.RELEASE</version>
     </dependency>
 
-    <!-- SLF4J -->
-    <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+<!--    &lt;!&ndash; SLF4J &ndash;&gt;
+    &lt;!&ndash; https://mvnrepository.com/artifact/org.slf4j/slf4j-api &ndash;&gt;
     <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-api</artifactId>
         <version>${java.slf4j.version}</version>
-    </dependency>
+    </dependency>-->
 
-    <!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
+<!--    &lt;!&ndash; https://mvnrepository.com/artifact/com.h2database/h2 &ndash;&gt;
     <dependency>
         <groupId>com.h2database</groupId>
         <artifactId>h2</artifactId>
         <version>2.0.202</version>
         <scope>test</scope>
-    </dependency>
+    </dependency>-->
     <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-test</artifactId>
@@ -172,6 +173,17 @@
         <version>3.9.0</version>
         <scope>test</scope>
     </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-slf4j-impl -->
+    <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-slf4j-impl</artifactId>
+        <version>${java.log4j-slf4j-impl.version}</version>
+<!--        <scope>test</scope> // Убрать эту строчку иначе работать не будет -->
+    </dependency>
+
+
+
     <!--    <dependency>-->
 <!--        <groupId>org.junit.jupiter</groupId>-->
 <!--        <artifactId>junit-jupiter-api</artifactId>-->
