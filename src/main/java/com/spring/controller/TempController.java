@@ -35,21 +35,31 @@ public class TempController {
 //        return "index";
 //    }
 
-//    // 1 GET
-//    @GetMapping("/objtest")
+//    // 1 GET Первый вариант
+//    @GetMapping("/objtestget")
 //    public String listCustomers(
 //            String id_product,
 //            String qty_product
 //    ) {
-//        System.out.println("dto = " + id_product + " = " + qty_product);
+//        log.info("Сработал GET контроллер. id_product = " + id_product + ", qty_product = " + qty_product);
 //        List<Customer> customerList = customerService.getCustomers();
 //        return "index";
 //    }
 
+    // 2 GET Второй вариант
+    @GetMapping("/objtestget")
+    public String listCustomers(
+            GsonRequestDTO dto
+    ) {
+        log.info("Сработал GET контроллер. id_product = " + dto.getId_product() + ", qty_product = " + dto.getQty_product());
+        List<Customer> customerList = customerService.getCustomers();
+        return "index";
+    }
+
     // 2 POST
-    @PostMapping("/objtest")
-    public String listCustomers(GsonRequestDTO dto) {
-        log.info("Сработал контроллер. Переменная = " + dto);
+    @PostMapping("/objtestpost")
+    public String listCustomersPOST(GsonRequestDTO dto) {
+        log.info("Сработал POST контроллер. Переменная = " + dto);
         return "index";
     }
 
