@@ -1,13 +1,12 @@
 package com.spring.controller;
 
+import com.google.gson.Gson;
 import com.spring.dto.GsonRequestDTO;
 import com.spring.entity.Customer;
 import com.spring.service.CustomerService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -48,21 +47,32 @@ public class TempController {
 
     // 2 GET Второй вариант
     @GetMapping("/objtestget")
-    public String listCustomers(
-            GsonRequestDTO dto
-    ) {
+    public String listCustomers(GsonRequestDTO dto) {
         log.info("Сработал GET контроллер. id_product = " + dto.getId_product() + ", qty_product = " + dto.getQty_product());
         List<Customer> customerList = customerService.getCustomers();
-        return "index";
+        return "OK GET";
     }
 
     // 2 POST
     @PostMapping("/objtestpost")
     public String listCustomersPOST(GsonRequestDTO dto) {
         log.info("Сработал POST контроллер. Переменная = " + dto);
-        return "index";
+        return "OK POST";
     }
 
+    // 3 POST - JSON
+    @PostMapping("/objtestjson")
+    @ResponseBody
+    public String listCustomersJSON(@RequestBody String str) {
+        log.info("Сработал JSON контроллер. Переменная = " + str);
+
+        Gson g = new Gson();
+        GsonRequestDTO dto = g.fromJson(str, GsonRequestDTO.class);
+
+        log.info("Gson GsonRequestDTO = " + dto);
+
+        return "OK JSON";
+    }
 
 
 //    @GetMapping("/showForm")

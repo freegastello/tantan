@@ -33,14 +33,6 @@ document.addEventListener('DOMContentLoaded', function () {
         // const request = new XMLHttpRequest();
         const url = "/objtestget?id_product=" + id_product_get + "&qty_product=" + qty_product_get;
         sendRequest('GET', url);
-        // request.open('GET', url);
-        // request.setRequestHeader('Content-Type', 'application/x-www-form-url');
-        // request.addEventListener("readystatechange", function() {
-        //     if (request.readyState === 4 && request.status === 200) {
-        //         console.log(request.responseText);
-        //     }
-        // });
-        // request.send();
     });
 
     // 2 POST
@@ -53,6 +45,19 @@ document.addEventListener('DOMContentLoaded', function () {
         sendRequest('POST', url, params);
     });
 
+    // 2 POST - JSON
+    const btnjson = document.querySelector('#btnjson');
+    btnjson.addEventListener('mousedown', function() {
+        const id_product_json  = "abc_JSON";
+        const qty_product_json = "def_JSON";
+        const url = "/objtestjson";
+        const object = {
+            "id_product": id_product_json,
+            "qty_product": qty_product_json
+        }
+        sendRequest('JSON', url, object);
+    });
+
 
 function sendRequest(type, url, params) {
     const request = new XMLHttpRequest();
@@ -61,14 +66,20 @@ function sendRequest(type, url, params) {
             console.log(request.responseText);
         }
     });
-    if (type === 'POST') {
-        request.open('POST', url);
-        request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        request.send(params);
-    } else if (type === 'GET') {
+
+    if (type === 'GET') {
         request.open('GET', url);
         request.setRequestHeader('Content-Type', 'application/x-www-form-url');
         request.send();
+    } else if (type === 'POST') {
+        request.open('POST', url);
+        request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        request.send(params);
+    } else if (type === 'JSON') {
+        request.open("POST", url, true);
+        request.setRequestHeader("Content-Type", "application/json");
+        const data = JSON.stringify(params);
+        request.send(data);
     }
 }
 
