@@ -8,8 +8,7 @@ import org.junit.runner.RunWith;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.ui.Model;
 
-import java.util.Collection;
-import java.util.Map;
+import java.util.*;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
@@ -28,7 +27,9 @@ public class CustomerControllerTest {
     public void firstTest() {
         controller.saveCustomer(getCustomer());
 
-        String result = controller.listCustomers(createModel());
+        Model model = createModel();
+        model.addAttribute("customers", getCustomers());
+        String result = controller.listCustomers(model);
         assertEquals("index", result);
     }
 
@@ -38,6 +39,14 @@ public class CustomerControllerTest {
         customer.setLastName("lastSave_Test");
         customer.setEmail("email@gmail.com_Test");
         return customer;
+    }
+
+    private List<Customer> getCustomers() {
+        Customer customer = new Customer();
+        customer.setFirstName("firstSave_Test");
+        customer.setLastName("lastSave_Test");
+        customer.setEmail("email@gmail.com_Test");
+        return new ArrayList<>(Arrays.asList(customer));
     }
 
     private Model createModel() {
