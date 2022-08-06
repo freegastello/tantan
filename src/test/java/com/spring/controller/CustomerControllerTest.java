@@ -1,53 +1,35 @@
 package com.spring.controller;
 
-import com.spring.config.SpringWebConfig;
 import com.spring.entity.Customer;
 import com.spring.service.CustomerService;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.ui.Model;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Collection;
+import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
-//@RunWith(MockitoJUnitRunner.class) // Строку оставил для примера. И без неё всё работает
-@RunWith(SpringRunner.class)
-@ContextConfiguration(classes = SpringWebConfig.class)
+@RunWith(MockitoJUnitRunner.class)
 public class CustomerControllerTest {
-//    private CustomerController controller;
-    private CustomerService mockService = mock(CustomerService.class);
-    private Model mockModel = mock(Model.class);
+    private CustomerController controller;
 
-    @Autowired
-    CustomerController controller;
-
-    @Autowired
-    CustomerService customerService;
-
-    @Test
-    public void listCustomersTest() {
-        Customer customer = getCustomer();
-        customerService.saveCustomer(customer);
-
-        when(mockService.getCustomers()).thenReturn(getCustomers());
-
-        String result = controller.listCustomers(mockModel);
-
-        assertEquals("index", result);
+    @Before
+    public void setUp() {
+        CustomerService service = mock(CustomerService.class);
+        controller = new CustomerController(service);
     }
 
-    private List<Customer> getCustomers() {
-        List<Customer> customerList = new ArrayList<>();
-        customerList.add(getCustomer());
-        return customerList;
+    @Test
+    public void firstTest() {
+        controller.saveCustomer(getCustomer());
+
+        String result = controller.listCustomers(createModel());
+        assertEquals("index", result);
     }
 
     private Customer getCustomer() {
@@ -58,11 +40,47 @@ public class CustomerControllerTest {
         return customer;
     }
 
-    @Test
-    public void saveCustomer() {
-    }
+    private Model createModel() {
+        return new Model() {
+            @Override
+            public Model addAttribute(String attributeName, Object attributeValue) {
+                return null;
+            }
 
-    @Test
-    public void deleteCustomer() {
+            @Override
+            public Model addAttribute(Object attributeValue) {
+                return null;
+            }
+
+            @Override
+            public Model addAllAttributes(Collection<?> attributeValues) {
+                return null;
+            }
+
+            @Override
+            public Model addAllAttributes(Map<String, ?> attributes) {
+                return null;
+            }
+
+            @Override
+            public Model mergeAttributes(Map<String, ?> attributes) {
+                return null;
+            }
+
+            @Override
+            public boolean containsAttribute(String attributeName) {
+                return false;
+            }
+
+            @Override
+            public Object getAttribute(String attributeName) {
+                return null;
+            }
+
+            @Override
+            public Map<String, Object> asMap() {
+                return null;
+            }
+        };
     }
 }
