@@ -7,7 +7,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.ui.Model;
-
+import com.google.common.collect.Lists;
 import java.util.*;
 
 import static org.junit.Assert.assertEquals;
@@ -46,7 +46,8 @@ public class CustomerControllerTest {
         customer.setFirstName("firstSave_Test");
         customer.setLastName("lastSave_Test");
         customer.setEmail("email@gmail.com_Test");
-        return new ArrayList<>(Arrays.asList(customer));
+        //return new ArrayList<>(Arrays.asList(customer));
+        return Lists.newArrayList(customer);
     }
 
     private Model createModel() {

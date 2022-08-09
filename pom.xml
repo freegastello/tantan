@@ -190,7 +190,12 @@
         <version>${java.log4j-slf4j-impl.version}</version>
 <!--        <scope>test</scope> // Убрать эту строчку иначе работать не будет -->
     </dependency>
-
+    <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>28.2-android</version>
+        <scope>test</scope>
+    </dependency>
 
 
     <!--    <dependency>-->
