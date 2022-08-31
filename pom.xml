@@ -197,116 +197,12 @@
         <scope>test</scope>
     </dependency>
 
-
-    <!--    <dependency>-->
-<!--        <groupId>org.junit.jupiter</groupId>-->
-<!--        <artifactId>junit-jupiter-api</artifactId>-->
-<!--        <version>5.7.2</version>-->
-<!--        <scope>test</scope>-->
-<!--    </dependency>-->
-
-
-    <!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.slf4j</groupId>-->
-<!--            <artifactId>slf4j-log4j12</artifactId>-->
-<!--            <version>${java.slf4j.version}</version>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
-
-<!--    &lt;!&ndash; https://mvnrepository.com/artifact/org.slf4j/slf4j-simple &ndash;&gt;-->
-<!--    <dependency>-->
-<!--        <groupId>org.slf4j</groupId>-->
-<!--        <artifactId>slf4j-simple</artifactId>-->
-<!--        <version>${java.slf4j.version}</version>-->
-<!--        <scope>test</scope>-->
-<!--    </dependency>-->
-
-<!--    &lt;!&ndash; https://mvnrepository.com/artifact/ch.qos.logback/logback-classic &ndash;&gt;-->
-<!--    <dependency>-->
-<!--        <groupId>ch.qos.logback</groupId>-->
-<!--        <artifactId>logback-classic</artifactId>-->
-<!--        <version>1.2.7</version>-->
-<!--        <scope>test</scope>-->
-<!--    </dependency>-->
-<!--    &lt;!&ndash; https://mvnrepository.com/artifact/ch.qos.logback/logback-core &ndash;&gt;-->
-<!--    <dependency>-->
-<!--        <groupId>ch.qos.logback</groupId>-->
-<!--        <artifactId>logback-core</artifactId>-->
-<!--        <version>1.2.7</version>-->
-<!--    </dependency>-->
-
-
-
-
-    <!--    &lt;!&ndash; https://mvnrepository.com/artifact/org.aspectj/aspectjrt &ndash;&gt;-->
-<!--    <dependency>-->
-<!--        <groupId>org.aspectj</groupId>-->
-<!--        <artifactId>aspectjrt</artifactId>-->
-<!--        <version>${java.aspectj.version}</version>-->
-<!--        <scope>runtime</scope>-->
-<!--    </dependency>-->
-
-<!--    &lt;!&ndash; https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-to-slf4j &ndash;&gt;-->
-<!--    <dependency>-->
-<!--        <groupId>org.apache.logging.log4j</groupId>-->
-<!--        <artifactId>log4j-to-slf4j</artifactId>-->
-<!--        <version>2.14.1</version>-->
-<!--    </dependency>-->
-
-<!--    &lt;!&ndash; https://mvnrepository.com/artifact/org.aspectj/aspectjweaver &ndash;&gt;-->
-<!--    <dependency>-->
-<!--        <groupId>org.aspectj</groupId>-->
-<!--        <artifactId>aspectjweaver</artifactId>-->
-<!--        <version>${java.aspectj.version}</version>-->
-<!--        <scope>runtime</scope>-->
-<!--    </dependency>-->
-
-<!--    &lt;!&ndash; https://mvnrepository.com/artifact/javax.annotation/javax.annotation-api &ndash;&gt;-->
-<!--    <dependency>-->
-<!--        <groupId>javax.annotation</groupId>-->
-<!--        <artifactId>javax.annotation-api</artifactId>-->
-<!--        <version>1.3.2</version>-->
-<!--    </dependency>-->
-
-
-
-<!--    &lt;!&ndash;        EXCEL. Второй пример из интернета START &ndash;&gt;-->
-<!--    <dependency>-->
-<!--        <groupId>org.apache.poi</groupId>-->
-<!--        <artifactId>poi</artifactId>-->
-<!--        <version>${java.poi.version}</version>-->
-<!--    </dependency>-->
-
-<!--    <dependency>-->
-<!--        <groupId>org.apache.poi</groupId>-->
-<!--        <artifactId>poi-ooxml</artifactId>-->
-<!--        <version>${java.poi.version}</version>-->
-<!--    </dependency>-->
-<!--    &lt;!&ndash;        EXCEL. Второй пример из интернета END &ndash;&gt;-->
-
-
-<!--    &lt;!&ndash; LOGGER &ndash;&gt;-->
-<!--    &lt;!&ndash; https://mvnrepository.com/artifact/org.slf4j/slf4j-api &ndash;&gt;-->
-<!--    <dependency>-->
-<!--        <groupId>org.slf4j</groupId>-->
-<!--        <artifactId>slf4j-api</artifactId>-->
-<!--        <version>${java.slf4j.version}</version>-->
-<!--    </dependency>-->
-
-<!--    &lt;!&ndash; https://mvnrepository.com/artifact/ch.qos.logback/logback-classic &ndash;&gt;-->
-<!--    <dependency>-->
-<!--        <groupId>ch.qos.logback</groupId>-->
-<!--        <artifactId>logback-classic</artifactId>-->
-<!--        <version>${java.logback-classic}</version>-->
-<!--        <scope>test</scope>-->
-<!--    </dependency>-->
-
-
-
-
-
-
+    <!-- https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc10 -->
+    <dependency>
+        <groupId>com.oracle.database.jdbc</groupId>
+        <artifactId>ojdbc10</artifactId>
+        <version>19.16.0.0</version>
+    </dependency>
 
 </dependencies>
 
