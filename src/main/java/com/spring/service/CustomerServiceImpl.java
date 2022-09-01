@@ -22,7 +22,11 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     @Transactional
     public void saveCustomer(Customer theCustomer) {
-        customerDAO.saveCustomer(theCustomer);
+        try {
+            customerDAO.saveCustomer(theCustomer);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
