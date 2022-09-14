@@ -2,16 +2,21 @@ package com.spring.controller;
 
 import com.spring.entity.Customer;
 import com.spring.service.CustomerService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @Controller
 @RequestMapping
 public class CustomerController {
+    private static final Logger LOGGER = LoggerFactory.getLogger(CustomerController.class);
+
     private CustomerService customerService;
 
     @Autowired
@@ -21,16 +26,23 @@ public class CustomerController {
 
     @GetMapping("/")
     public String listCustomers(Model model) {
-        List<Customer> customerList = customerService.getCustomers();
+        LOGGER.debug("Старт CustomerController.listCustomers()");
+        try {
+            List<Customer> customerList = customerService.getCustomers();
 
-        Customer customer = new Customer();
-        customer.setFirstName("firstSave");
-        customer.setLastName("lastSave");
-        customer.setEmail("email@gmail.com");
-        customerService.saveCustomer(customer);
+            Customer customer = new Customer();
+            customer.setFirstName("firstSave");
+            customer.setLastName("lastSave");
+            customer.setEmail("email@gmail.com");
+            customerService.saveCustomer(customer);
 
-        model.addAttribute("customers", customerList);
-        return "index";
+            model.addAttribute("customers", customerList);
+            return "index";
+        } catch (Exception e) {
+            String messageId = "ERROR: " + UUID.randomUUID();
+            LOGGER.error(messageId, e);
+            return "error";
+        }
     }
 
 //    @GetMapping("/objtest")

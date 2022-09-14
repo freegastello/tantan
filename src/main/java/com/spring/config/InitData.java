@@ -12,7 +12,7 @@ public class InitData {
     private CustomerService customerService;
 
     public void initData() {
-//        generateEntityAnimals();
+        generateEntityAnimals();
     }
 
     private void generateEntityAnimals() {

@@ -1,25 +1,28 @@
 package com.spring.controller;
 
+import com.google.common.collect.Lists;
 import com.spring.entity.Customer;
 import com.spring.service.CustomerService;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.ui.Model;
-import com.google.common.collect.Lists;
-import java.util.*;
+
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.mock;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.*;
 
-@RunWith(MockitoJUnitRunner.class)
+//@RunWith(MockitoJUnitRunner.class)
 public class CustomerControllerTest {
+    private CustomerService service;
     private CustomerController controller;
 
     @Before
     public void setUp() {
-        CustomerService service = mock(CustomerService.class);
+        service = mock(CustomerService.class);
         controller = new CustomerController(service);
     }
 
@@ -31,6 +34,28 @@ public class CustomerControllerTest {
         model.addAttribute("customers", getCustomers());
         String result = controller.listCustomers(model);
         assertEquals("index", result);
+    }
+
+    @Test
+    public void listCustomersTrueTest() {
+        String response = controller.listCustomers(createModel());
+        assertEquals("index", response);
+    }
+
+    @Test
+    public void listCustomersFalse1Test() {
+//        Вызывать ошибку в контроллере если метод что-то возвращает:
+        when(service.getCustomers()).thenThrow(new RuntimeException("Ошибка_"));
+        String response = controller.listCustomers(any());
+        assertEquals("error", response);
+    }
+
+    @Test
+    public void listCustomersFalse2Test() {
+//        Вызывать ошибку в контроллере если метод ничего не возвращает:
+        doThrow(new RuntimeException()).doNothing().when(service).saveCustomer(any());
+        String response = controller.listCustomers(any());
+        assertEquals("error", response);
     }
 
     private Customer getCustomer() {
