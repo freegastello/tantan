@@ -3,6 +3,7 @@ package com.spring.entity;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
+import java.util.UUID;
 
 @Entity
 @Table(name = "customer")
@@ -13,6 +14,12 @@ public class Customer {
     @Column(name = "id")
     @NotNull
     private long id;
+
+//    @Id
+//    @Column(name = "ID")
+//    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "id_Sequence")
+//    @SequenceGenerator(name = "id_Sequence", sequenceName = "ID_SEQ")
+//    private int id;
 
     @Column(name = "first_name")
     private String firstName;
